@@ -22,17 +22,20 @@ to a file.
 
 3.  *Navigate to the Created Directory*
 
-    - Move into the newly created directory: sh cd log
+    - Move into the newly created directory:
+    -     cd log
 
 ### Step 2: Create the Script
 
 1.  *Create a Script File*
 
-    - Create a new file named logs.sh: sh touch logs.sh
+    - Create a new file named logs.sh:
+    -     touch logs.sh
 
 2.  *Edit the Script Using vi or vim*
 
-    - Open the logs.sh file in the vi editor: sh vi logs.sh
+    - Open the logs.sh file in the vi editor:
+    -     vi logs.sh
 
 3.  *Add the Following Content to logs.sh*
 
