@@ -148,10 +148,11 @@ to a file.
 
 2.  *Add the Following Line to Run the Script Every 2 Minutes*
 
-    - Add this line to the crontab: sh \*/2 \* \* \* \*
-      /home/log/logs.sh
+        - Add this line to the crontab: sh \*/2 \* \* \* \* /home/log/logs.sh'
+      
     **add your directory file instaed of this /home/log/logs.sh**
-3.  *Save and Exit the Crontab Editor*
+    
+4.  *Save and Exit the Crontab Editor*
 
 ### Step 8: Verify Cron Job
 
