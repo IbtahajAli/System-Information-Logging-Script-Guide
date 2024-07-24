@@ -60,16 +60,16 @@ to a file.
         TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')<br />
 
       \# Displaying the results<br />
-        echo "Name: $Name"
-        echo "CPU: $CPU CPUs"
-        echo "CPU Used: $CPU_USED %"
-        echo "HDD: $HDD GB"
-        echo "HDD Used: $HDD_USED GB"
-        echo "RAM: $RAM GB"
-        echo "RAM Used: $RAM_USED GB"
+        echo "Name: $Name"<br />
+        echo "CPU: $CPU CPUs"<br />
+        echo "CPU Used: $CPU_USED %"<br />
+        echo "HDD: $HDD GB"<br />
+        echo "HDD Used: $HDD_USED GB"<br />
+        echo "RAM: $RAM GB"<br />
+        echo "RAM Used: $RAM_USED GB"<br />
 
-      \# Logging the results with timestamp
-        echo "$TIMESTAMP - Name: $Name, CPU: $CPU CPUs, CPU Used: $CPU_USED %, HDD: $HDD GB, HDD Used: $HDD_USED GB, RAM: $RAM GB, RAM Used: $RAM_USED GB" >> $LOG_FILE
+      \# Logging the results with timestamp<br />
+        echo "$TIMESTAMP - Name: $Name, CPU: $CPU CPUs, CPU Used: $CPU_USED %, HDD: $HDD GB, HDD Used: $HDD_USED GB, RAM: $RAM GB, RAM Used: $RAM_USED GB" >> $LOG_FILE<br />
 
 
 ### 
@@ -135,11 +135,11 @@ to a file.
 
 - *Running the script:* sh sudo ./logs.sh
 
-  - Output: Name: root CPU: 12 CPUs CPU Used: 2.1 % HDD: 512 GB HDD
-    Used: 103.448 GB RAM: 23.3775 GB RAM Used: 3.28 GB
+  - Output: Name: root CPU: 12 CPUs CPU Used: 2.1 % HDD: 512 GB HDD<br />
+    Used: 103.448 GB RAM: 23.3775 GB RAM Used: 3.28 GB<br />
 
-- *Checking the log file:* sh cat /var/log/system_info.log
+- *Checking the log file:* sh cat /var/log/system_info.log<br />
 
-  - Output: 2024-07-20 20:56:25 - Name: root, CPU: 12 CPUs, CPU Used:
+  - Output: 2024-07-20 20:56:25 - Name: root, CPU: 12 CPUs, CPU Used:<br />
     6.1 %, HDD: 512 GB, HDD Used: 103.452 GB, RAM: 23.3775 GB, RAM Used:
-    3.38 GB
+    3.38 GB<br />
