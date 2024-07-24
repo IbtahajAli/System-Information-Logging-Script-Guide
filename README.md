@@ -168,13 +168,11 @@ to a file.
   
 -     sudo ./logs.sh
 
--     cat /var/log/system_info.log
-
-
   - Output: Name: root CPU: 12 CPUs CPU Used: 2.1 % HDD: 512 GB HDD 
     Used: 103.448 GB RAM: 23.3775 GB RAM Used: 3.28 GB 
 
-- *Checking the log file:* sh cat /var/log/system_info.log 
+- *Checking the log file:*
+-     cat /var/log/system_info.log 
 
   - Output: 2024-07-20 20:56:25 - Name: root, CPU: 12 CPUs, CPU Used: 
     6.1 %, HDD: 512 GB, HDD Used: 103.452 GB, RAM: 23.3775 GB, RAM Used:
