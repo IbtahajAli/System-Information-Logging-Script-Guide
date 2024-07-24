@@ -17,7 +17,8 @@ to a file.
 
 2.  *Create a Directory*
 
-    - Create a new directory named log: sh mkdir log
+    - Create a new directory named log:
+    -     mkdir log
 
 3.  *Navigate to the Created Directory*
 
@@ -37,39 +38,39 @@ to a file.
 
     - Copy and paste the following script into the logs.sh file: sh
     
-      \#!/bin/bash
+          \#!/bin/bash
 
-      LOG_FILE="/var/log/system_info.log"
+          LOG_FILE="/var/log/system_info.log"
 
-      \# Gathering basic system information
-        Name=$(whoami)
+          \# Gathering basic system information
+            Name=$(whoami)
 
-      \# CPU Usage<br />
-        CPU=$(nproc)<br />
-        CPU_USED=$(top -bn1 | grep "Cpu(s)" | awk '{print $2 + $4}') <br />
+          \# CPU Usage<br />
+            CPU=$(nproc)<br />
+            CPU_USED=$(top -bn1 | grep "Cpu(s)" | awk '{print $2 + $4}') <br />
 
-      \# RAM Usage<br />
-        RAM=$(grep -i 'memtotal' /proc/meminfo | awk '{print $2 / (1024^2)}')<br />
-        RAM_USED=$(free -m | awk 'NR==2{printf "%.2f", $3/1024 }') <br />
+          \# RAM Usage<br />
+            RAM=$(grep -i 'memtotal' /proc/meminfo | awk '{print $2 / (1024^2)}')<br />
+            RAM_USED=$(free -m | awk 'NR==2{printf "%.2f", $3/1024 }') <br />
 
-      \# HDD Usage<br />
-        HDD=$(lsblk -b -d -o NAME,SIZE | grep -E 'sda|sdb' | awk '{sum += $2} END {print sum / (1024^3)}')<br />
-        HDD_USED=$(df -B1 --total | grep 'total' | awk '{print $3 / (1024^3)}') <br />
+          \# HDD Usage<br />
+            HDD=$(lsblk -b -d -o NAME,SIZE | grep -E 'sda|sdb' | awk '{sum += $2} END {print sum / (1024^3)}')<br />
+            HDD_USED=$(df -B1 --total | grep 'total' | awk '{print $3 / (1024^3)}') <br />
 
-      \# Timestamp<br />
-        TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')<br />
+          \# Timestamp<br />
+            TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')<br />
 
-      \# Displaying the results<br />
-        echo "Name: $Name"<br />
-        echo "CPU: $CPU CPUs"<br />
-        echo "CPU Used: $CPU_USED %"<br />
-        echo "HDD: $HDD GB"<br />
-        echo "HDD Used: $HDD_USED GB"<br />
-        echo "RAM: $RAM GB"<br />
-        echo "RAM Used: $RAM_USED GB"<br />
+          \# Displaying the results<br />
+            echo "Name: $Name"<br />
+            echo "CPU: $CPU CPUs"<br />
+            echo "CPU Used: $CPU_USED %"<br />
+            echo "HDD: $HDD GB"<br />
+            echo "HDD Used: $HDD_USED GB"<br />
+            echo "RAM: $RAM GB"<br />
+            echo "RAM Used: $RAM_USED GB"<br />
 
-      \# Logging the results with timestamp<br />
-        echo "$TIMESTAMP - Name: $Name, CPU: $CPU CPUs, CPU Used: $CPU_USED %, HDD: $HDD GB, HDD Used: $HDD_USED GB, RAM: $RAM GB, RAM Used: $RAM_USED GB" >> $LOG_FILE<br />
+          \# Logging the results with timestamp<br />
+          echo "$TIMESTAMP - Name: $Name, CPU: $CPU CPUs, CPU Used: $CPU_USED %, HDD: $HDD GB, HDD Used: $HDD_USED GB, RAM: $RAM GB, RAM Used: $RAM_USED GB" >> $LOG_FILE<br />
 
 
 ### 
@@ -78,13 +79,15 @@ to a file.
 
 1.  *Change the Script Permissions*
 
-    - Make the script executable: sh chmod +x logs.sh
+    - Make the script executable:
+    -     sh chmod +x logs.sh
 
 ### Step 4: Run the Script
 
 1.  *Attempt to Run the Script*
 
-    - Run the script: sh ./logs.sh
+    - Run the script:
+    -     sh ./logs.sh
     - If you see the error Permission denied for
       /var/log/system_info.log, follow the next steps.
 
@@ -99,24 +102,28 @@ to a file.
 
 2.  *Use sudo to Create the Log File*
 
-    - Create the log file with sudo: sh sudo touch
-      /var/log/system_info.log
+    - Create the log file with sudo:
+    -     sudo touch
+          /var/log/system_info.log
 
 ### Step 6: Run the Script as Root
 
 1.  *Run the Script with sudo*
 
-    - Run the script as root: sh sudo ./logs.sh
+    - Run the script as root:
+    -     sudo ./logs.sh
 
 2.  *Check the Log File for Entries*
 
-    - View the contents of the log file: sh cat /var/log/system_info.log
+    - View the contents of the log file:
+    -     cat /var/log/system_info.log
 
 ### Step 7: Automate the Script Using Cron
 
 1.  *Edit the Crontab to Run the Script Periodically*
 
-    - Open the crontab editor: sh sudo crontab -e
+    - Open the crontab editor:
+    -     sudo crontab -e
 
 2.  *Add the Following Line to Run the Script Every 2 Minutes*
 
@@ -129,11 +136,13 @@ to a file.
 
 1.  *List the Crontab Entries to Verify*
 
-    - Check the crontab entries: sh sudo crontab -l
+    - Check the crontab entries:
+    -     sudo crontab -l
 
 ## Example Outputs
 
-- *Running the script:* sh sudo ./logs.sh
+- *Running the script:*
+-     sudo ./logs.sh
 
   - Output: Name: root CPU: 12 CPUs CPU Used: 2.1 % HDD: 512 GB HDD<br />
     Used: 103.448 GB RAM: 23.3775 GB RAM Used: 3.28 GB<br />
